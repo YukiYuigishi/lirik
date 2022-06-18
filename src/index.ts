@@ -1,7 +1,7 @@
-import Test from "./test";
+import { Hono } from "hono";
 
-const App = () => {
-  Test();
-};
+const App = new Hono();
 
-App();
+App.get("/", (c) => c.text("やあ"));
+
+App.fire();
